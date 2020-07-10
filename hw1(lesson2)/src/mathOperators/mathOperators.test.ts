@@ -1,4 +1,4 @@
-import { mul, div, add, minus, sqrt, raise } from "./mathOperators";
+import {mul, div, add, minus, sqrt, raise, factorial} from "./mathOperators";
 
 test("mul 1 * 2 to equal 2", () => {
   expect(mul(1, 2)).toBe(2);
@@ -58,4 +58,12 @@ test("rise 7 to 0 equal 1", () => {
 
 test("rise 2 to undefined equal 1", () => {
   expect(raise(2)).toBe(1)
+});
+
+test("factorial 1 equal 1", () => {
+  expect(factorial(1)).toBe(1)
+});
+
+test("factorial 5 equal 120", () => {
+  expect(factorial(5)).toBe(120)
 });

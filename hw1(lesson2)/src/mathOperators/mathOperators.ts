@@ -54,13 +54,18 @@ export const raise: ScalarOperationType = (
   return 1;
 }
 
+export const factorial: ScalarOperationType = (
+    first: number
+): number => (first != 1) ? first * factorial(first - 1) : 1;
+
 export const mathOperators: { [key: string]: ScalarOperationType } = {
   "*": mul,
   "/": div,
   "+": add,
   "-": minus,
   "**": sqrt,
-  "^": raise
+  "^": raise,
+  "!": factorial
 };
 
 export const mathPriorities: { [key: string]: number } = {
@@ -75,6 +80,7 @@ export const mathOperatorsPriorities: { [key: string]: number } = {
   "/": FIRST,
   "**": FIRST,
   "^": FIRST,
+  "!": FIRST,
   "+": SECOND,
   "-": SECOND,
 };
