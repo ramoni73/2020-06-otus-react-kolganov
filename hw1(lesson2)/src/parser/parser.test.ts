@@ -16,6 +16,6 @@ test("parser: 1 + + 33 - 2", () => {
   expect(() => parser("1 + + 33 - 2")).toThrow(TypeError("Unexpected string"));
 });
 
-test("parser: 1 ! 33 - 2", () => {
-  expect(() => parser("1 ! 33 - 2")).toThrow(TypeError("Unexpected string"));
+test("parser: 1 @ 33 - 2", () => {
+  expect(() => parser("1 @ 33 - 2")).toThrow(TypeError("Unexpected string"));
 });
