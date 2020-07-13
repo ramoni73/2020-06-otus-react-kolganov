@@ -11,6 +11,9 @@ interface AddItemState {
 class AddItemForm extends React.Component<AddItemProps, AddItemState>{
     constructor(props: AddItemProps) {
         super(props);
+        this.state = {
+            label: ""
+        }
     }
 
     onLabelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
