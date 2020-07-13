@@ -1,4 +1,5 @@
 import React from "react";
+import "./addItemForm.css";
 
 interface AddItemProps {
     onAdd: (text: string) => void
@@ -41,7 +42,7 @@ class AddItemForm extends React.Component<AddItemProps, AddItemState>{
                     onChange={this.onLabelChange}
                     value={this.state.label}
                 />
-                <button className="btn btn-outline-secondary">Add Item</button>
+                <button className="btn btn-outline-secondary">Add</button>
             </form>
         );
     }

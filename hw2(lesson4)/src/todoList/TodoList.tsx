@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import "./todoList.css";
-import {TodoObj} from "../App";
+import {TodoObj} from "../app/App";
 import ListItem from "../listItem/ListItem";
 
 interface TodoListProps {
@@ -14,7 +14,7 @@ const TodoList: FC<TodoListProps> = ({toDos, onDeleted, onToggleImportant, onTog
     const elements = toDos.map(item => {
         const { id, ...restProps } = item;
         return (
-            <li key={id}>
+            <li key={id} className="list-group-item">
                 <ListItem
                     id={id}
                     {...restProps}
