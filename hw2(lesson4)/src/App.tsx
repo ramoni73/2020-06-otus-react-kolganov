@@ -24,9 +24,11 @@ class App extends Component<AppProps, AppState>{
 
         this.state = {
             todoData: [
-                this.createTodoItem("Drink coffie"),
-                this.createTodoItem("Make awsome app"),
-                this.createTodoItem("Have a lunch")
+                this.createTodoItem("Drink a lot of coffee"),
+                this.createTodoItem("Make this app"),
+                this.createTodoItem("Drink more coffee"),
+                this.createTodoItem("Have a lunch"),
+                this.createTodoItem("Go to bed")
             ]
         };
     }

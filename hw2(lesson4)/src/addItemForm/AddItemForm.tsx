@@ -14,6 +14,8 @@ class AddItemForm extends React.Component<AddItemProps, AddItemState>{
         this.state = {
             label: ""
         }
+
+        this.onLabelChange = this.onLabelChange.bind(this);
     }
 
     onLabelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +24,7 @@ class AddItemForm extends React.Component<AddItemProps, AddItemState>{
         });
     };
 
-    onSubmit = (e: Event) => {
+    onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         this.props.onAdd(this.state.label);
         this.setState({
@@ -31,12 +33,12 @@ class AddItemForm extends React.Component<AddItemProps, AddItemState>{
     };
     render() {
         return (
-            <form className="item-add-form d-flex" onSubmit={() => this.onSubmit}>
+            <form className="item-add-form d-flex" onSubmit={this.onSubmit}>
                 <input
                     className="form-control"
                     type="text"
                     placeholder="Введите дело"
-                    onChange={() => this.onLabelChange}
+                    onChange={this.onLabelChange}
                     value={this.state.label}
                 />
                 <button className="btn btn-outline-secondary">Add Item</button>

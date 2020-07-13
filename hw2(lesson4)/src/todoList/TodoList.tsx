@@ -16,6 +16,7 @@ const TodoList: FC<TodoListProps> = ({toDos, onDeleted, onToggleImportant, onTog
         return (
             <li key={id}>
                 <ListItem
+                    id={id}
                     {...restProps}
                     onDeleted={() => onDeleted(id)}
                     onToggleImportant={() => onToggleImportant(id)}
