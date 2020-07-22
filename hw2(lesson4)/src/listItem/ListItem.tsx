@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import "./listItem.css";
 
 interface ListItemProps {
   id: number;
@@ -20,13 +19,17 @@ const ListItem: FC<ListItemProps> = ({
   onToggleImportant,
   onDeleted,
 }) => {
-  let classNames = "todo-list-item";
+  let spanStyle = {
+    cursor: "pointer",
+    textDecoration: "none",
+    fontWeight: "normal",
+  } as React.CSSProperties;
 
   if (done) {
-    classNames += " done";
+    spanStyle.textDecoration = "line-through";
   }
   if (important) {
-    classNames += " important";
+    spanStyle.fontWeight = "bold";
   }
 
   const onDeleteClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -45,25 +48,15 @@ const ListItem: FC<ListItemProps> = ({
   };
 
   return (
-    <span className={classNames}>
-      <span className="todo-list-item-label" onClick={onDoneClick}>
-        {label}
-      </span>
+    <span style={spanStyle}>
+      <span onClick={onDoneClick}>{label}</span>
 
-      <button
-        className="btn btn-outline-success btn-sm float-right"
-        type="button"
-        onClick={onImportantClick}
-      >
-        <i className="fa fa-exclamation" />
+      <button type="button" onClick={onImportantClick}>
+        !!!
       </button>
 
-      <button
-        className="btn btn-outline-danger btn-sm float-right"
-        type="button"
-        onClick={onDeleteClick}
-      >
-        <i className="fa fa-trash-o" />
+      <button type="button" onClick={onDeleteClick}>
+        Del
       </button>
     </span>
   );

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Header from "../header/Header";
 import TodoList from "../todoList/TodoList";
 import AddItemForm from "../addItemForm/AddItemForm";
-import "./app.css";
 
 interface AppProps {}
 
@@ -97,7 +96,7 @@ class App extends Component<AppProps, AppState> {
   render() {
     const { todoData } = this.state;
     return (
-      <div className="todo-app">
+      <div>
         <Header />
         <TodoList
           toDos={todoData}

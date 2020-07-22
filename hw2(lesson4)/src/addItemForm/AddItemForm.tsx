@@ -1,5 +1,4 @@
 import React from "react";
-import "./addItemForm.css";
 
 interface AddItemProps {
   onAdd: (text: string) => void;
@@ -34,15 +33,14 @@ class AddItemForm extends React.Component<AddItemProps, AddItemState> {
   };
   render() {
     return (
-      <form className="item-add-form d-flex" onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit}>
         <input
-          className="form-control"
           type="text"
           placeholder="Введите дело"
           onChange={this.onLabelChange}
           value={this.state.label}
         />
-        <button className="btn btn-outline-secondary">Add</button>
+        <button>Add</button>
       </form>
     );
   }

@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import "./todoList.css";
 import { TodoObj } from "../app/App";
 import ListItem from "../listItem/ListItem";
 
@@ -19,7 +18,7 @@ const TodoList: FC<TodoListProps> = ({
   const elements = toDos.map((item) => {
     const { id, ...restProps } = item;
     return (
-      <li key={id} className="list-group-item">
+      <li key={id}>
         <ListItem
           id={id}
           {...restProps}
@@ -30,7 +29,7 @@ const TodoList: FC<TodoListProps> = ({
       </li>
     );
   });
-  return <ul className="list-group todoList">{elements}</ul>;
+  return <ul>{elements}</ul>;
 };
 
 export default TodoList;
