@@ -2,7 +2,7 @@
   "name": "2020-06-otus-react-kolganov",
   "version": "1.0.0",
   "scripts": {
-    "build": "npx webpack --mode production",
+    "calc": "npx ts-node src",
     "test": "npx jest"
   },
   "devDependencies": {
